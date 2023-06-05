@@ -62,9 +62,56 @@ const Text = styled.p`
 const Post = () => {
   const params = useParams();
   const { postId } = params;
+  const [post, setPost] = useState<IPost | null>(null);
 
+  const fetchPostById = async () => {
+    const { data } = await getPostById(postId);
+    const { post } = data;
+    setPost(post);
+  };
+
+  useEffect(() => {
+    fetchPostById();
+  }, []);
+
+  if (!post) {
+    return <NotFound />;
+  }
   // todo (4) post 컴포넌트 작성
-  return <div style={{ margin: '5.5rem auto', width: '700px' }}>나는 포스트</div>;
+
+  const clickDeleteButton = () => {
+    const result = window.confirm("real delete?");
+    if (result) {
+      requestDeletePostById();
+    }
+  };
+
+  return (<div style={{ margin: '5.5rem auto', width: '700px' }}>
+    <div>
+      <Title>{post?.title}</Title>
+      <Toolbar>
+        <Info>
+          <div>n분전</div>
+        </Info>
+        <div>
+          <Link to="/write" state={{ postId }} style={{ marginRight: 10 }}>
+            <TextButton>edit</TextButton>
+          </Link>
+          <TextButton onclick={clickDeleteButton}>del</TextButton>
+        </div>
+      </Toolbar>
+      {post?.tag && (
+        <TagWrapper>
+          <Tag>#(post?.tag)</Tag>
+        </TagWrapper>
+      )}
+    </div>
+    <ContentsArea>
+      {post?.contents?.split("\n").map((text, index) => (
+        <Text key={index}>{text}</Text>
+      ))}
+    </ContentsArea>
+  </div>);
 };
 
 export default Post;
