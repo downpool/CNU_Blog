@@ -3,6 +3,7 @@ export enum TAG {
   REACT = 'REACT',
   SPRINGBOOT = 'SPRINGBOOT',
   DB = 'DB',
+  SWIFT = 'SWIFT',
 }
 
 export interface IPost {
