@@ -135,7 +135,7 @@ const Write = () => {
 
   const clickConfirm = () => {
     if (!title || !content) {
-      alert("Includes null value");
+      alert('Includes null value');
       return;
     }
 
@@ -144,19 +144,18 @@ const Write = () => {
     } else {
       requestCreatePost();
     }
-    navigate("/");
-
+    navigate('/');
   };
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       <div style={{ height: 'calc(100% - 4rem)', paddingBottom: '4rem' }}>{/*todo (5-2) 제목 / 태그 셀렉 / 내용 입력란 추가*/}
         <TitleInput placeholder="insert title" value={title} onChange={handleChangeTitle} />
-        <TagSelect value={tag} onChange={handleChangeTag} placeholder={"insert tag"}>
+        <TagSelect value={tag} onChange={handleChangeTag} placeholder={'insert tag'}>
           {tagList.map(tag => {
             return <option key={tag}>{tag}</option>;
           })}
         </TagSelect>
-        <Editor value={content} onChange={handleChangeContent} placeholder='insert context' />
+        <Editor value={content} onChange={handleChangeContent} placeholder="insert context" />
       </div>
       <BottomSheet>
         <Link to="/">
