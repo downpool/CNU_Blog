@@ -60,13 +60,13 @@ const Layout = () => {
       <Profile>
         <div>
           <ProfilePicture
-            src="https://mblogthumb-phinf.pstatic.net/MjAyMTA2MTBfMTY5/MDAxNjIzMjkwMzE0NjA5.7x5Jw8XCcycDP2aa1z93ymaAE5zfruGdTyI07C3fI_cg._X_NGAFewoj6-TEi9fGV-X8bvJxJabVujmPZ2Zxxtu8g.JPEG.kimjin8946/13.jpg?type=w800"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT76cYRLJSC3AQTRrrYDxVEsl5sV-o0BP5rEfKG-RzH_YTkTeNa3yfPmrh1Em15ybv_Mx4&usqp=CAU"
             alt="프로필 사진"
           />
         </div>
         <div>
-          <Name>은경</Name>
-          <Description>건강하지 않고 졸리고 배고픈 개발자</Description>
+          <Name>dongdong</Name>
+          <Description>iOS 외길인생 개발자</Description>
         </div>
       </Profile>
       <Nav>
