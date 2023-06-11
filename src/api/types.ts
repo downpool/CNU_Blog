@@ -4,6 +4,7 @@ export enum TAG {
   SPRINGBOOT = 'SPRINGBOOT',
   DB = 'DB',
   SWIFT = 'SWIFT',
+  IOS = 'IOS',
 }
 
 export interface IPost {
