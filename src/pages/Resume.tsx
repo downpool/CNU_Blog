@@ -1,5 +1,11 @@
+import { Link } from 'react-router-dom';
+
 const Resume = () => {
-  return <div>나는 프로젝트 내역</div>;
+  return (
+    <div>
+      <h2>🌐대외활동🌐</h2>
+    </div>
+  );
 };
 
 export default Resume;
